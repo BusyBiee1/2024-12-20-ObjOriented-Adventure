@@ -387,28 +387,44 @@ class Character5 {
 class Adventurer5 extends Character5{
   // Static property for valid roles
   static ROLES = ["Fighter", "Healer", "Wizard"];
+  static MAX_HEALTH = 100;
 
   constructor(name, health, inventory = [], role) {
     // Validate the role against the ROLES array
     if (!Adventurer5.ROLES.includes(role)) {
-      throw new Error(`Invalid role: "${role}". Valid roles are: ${Adventurer5.ROLES.join(", ")}.`);
+       console.log(role);
+       throw new Error(`Invalid role: "${role}". Valid roles are: ${Adventurer5.ROLES}.`);
+//       throw new Error(`Invalid role: "${role}". Valid roles are: ${Adventurer5.ROLES.join(", ")}.`);
     }
-    super(name, 10, inventory); 
-    this.name = name;
-    this.health = health;
-    this.inventory = inventory;
+    super(name, health, inventory); 
+//    this.name = name;
+//    this.health = health;
+//    this.inventory = inventory;
     this.role = role; // Assign the validated role
   }
 
-  roll(mod = 0) {
-    const result = Math.floor(Math.random() * 20) + 1 + mod;
-    console.log(`${this.name} (Role: ${this.role}) rolled a ${result}.`);
-  }
+//  roll(mod = 0) {
+//    const result = Math.floor(Math.random() * 20) + 1 + mod;
+//    console.log(`${this.name} (Role: ${this.role}) rolled a ${result}.`);
+//  }
 }
 
 Chr = new Character5;
 Chr.Name = "Chr1";
-Adv = new Adventurer5
-Adv.Name = "Adv";
-console.log(Chr);
+Adv = new Adventurer5 ("jill", 22, ["ab", "bc"],"Fighter");
+//Adv.Name = "Adv";
+//Chr.role = "Fighter";
+//console.log(Chr);
+//Adv.role = "Fighter";
 console.log(Adv);
+//Chr.health = 120;
+//console.log(Chr.helath);
+
+
+//////////////////////////////////////////////////
+//Part 5: Gather your Party: Using factory keyword for shared property values.
+console.log("Part 5: Gather your Party:");
+
+
+
+
