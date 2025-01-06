@@ -452,5 +452,3 @@ console.log(robin);
 //Part 6: Developing Skills: Using factory keyword for shared property values.
 console.log("Part 6: Developing Skills:");
 
-
-
